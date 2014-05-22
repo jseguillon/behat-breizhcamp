@@ -1,0 +1,48 @@
+default:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url:  'Edelia.app'
+      default_session: selenium2
+      browser_name: ''
+      selenium2:                    
+        capabilities: { 'platform': 'MAC'}
+        wd_host: 'http://localhost:4723/wd/hub'
+    Sanpi\Behatch\Extension:
+      contexts:
+        debug:
+          screenshot_dir: /Users/bzhcamp/Documents/behat/
+        browser: ~
+
+chrome:
+  context:
+    parameters:
+      base_url: http://localhost/index.php
+  extensions:
+    Sanpi\Behatch\Extension: 
+      contexts:
+        debug:
+          screenshot_dir: /Users/bzhcamp/Documents/behat/
+        browser: ~
+    Behat\MinkExtension\Extension:
+      base_url: 'http://localhost/index.php'
+      selenium2:
+        browser: chrome
+        capabilities: { "browserName": "chrome", "browser": "chrome", "version":  "latest"}
+        wd_host: 'http://localhost:4444/wd/hub'
+
+safari:
+  context:
+    parameters:
+      base_url: http://localhost/index.php
+  extensions:
+    Sanpi\Behatch\Extension: 
+      contexts:
+        debug:
+          screenshot_dir: /Users/bzhcamp/Documents/behat/
+        browser: ~
+    Behat\MinkExtension\Extension:
+      base_url: 'http://localhost/index.php'
+      selenium2:
+        browser: safari
+        capabilities: { "browserName": "safari", "browser": "safari", "version":  "latest"}
+        wd_host: 'http://localhost:4444/wd/hub'

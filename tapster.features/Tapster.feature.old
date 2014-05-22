@@ -1,0 +1,4 @@
+Feature: Tapster
+
+  Scenario: Test
+    Given I tap on "SensorSwitch"
